@@ -1,28 +1,83 @@
-<html>
-  <head>
-    <meta charset="UTF-8" />
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
- </head>  
+    <style>
+        body {
+            font-family: helvetica, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('static/background.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .contact-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group textarea {
+            height: 60px;
+        }
+        .form-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #08561c;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-button:hover {
+            background-color: #08561c;
+        }
+    </style>
+</head>
 <body>
-
- <div>
-    <label for="name">Prénom&nbsp;:</label>
-    <input type="text" id="name" name="user_name" />
-  <div>
-  <div>
-    <label for="name">Nom&nbsp;:</label>
-    <input type="text" id="name" name="user_name" />
-  <div>
-
-  <div>
-    <label for="msg">Message&nbsp;:</label>
-    <textarea id="msg" name="user_message"></textarea>
-  </div>
-
-  <div class="button">
-    <button type="submit">Envoyer /button>
-  </div>
-</form>
+    
+<div class="contact-form">
+    <h2>Contact</h2>
+    <form action="/contact/" method="post">
+        <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom" required>
+        </div>
+        <div class="form-group">
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" name="prenom" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="form-button">Envoyer votre message</button>
+    </form>
+</div>
 
 </body>
 </html>
